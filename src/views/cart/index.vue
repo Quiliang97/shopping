@@ -7,45 +7,42 @@
 </van-nav-bar>
 
 <van-tabs v-model="active">
-  <van-tab v-for="index in 4" :key="index">
-    <template #title> <van-icon name="more-o" />全部 </template>
-    
-   <van-card
+  <van-tab title="最近">
+    <van-card
   num="2"
-  tag="标签"
   price="2.00"
   desc="描述信息"
   title="商品标题"
   thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
-  origin-price="10.00"
-/>
+>
+  <template #tags>
+    <van-tag plain type="danger">标签</van-tag>
+    <van-tag plain type="danger">标签</van-tag>
+  </template>
+  <template #footer>
+    <van-button size="mini">按钮</van-button>
+    <van-button size="mini">按钮</van-button>
+  </template>
+</van-card>
   </van-tab>
+  <van-tab title="喜欢">内容 2</van-tab>
+  <van-tab title="看了又看">内容 3</van-tab>
+  <van-tab title="收藏">内容 4</van-tab>
 </van-tabs>
 <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit" />
 
-        <FooterBar></FooterBar>
+  <FooterBar></FooterBar>
     </div>
 </template>
 <script>
 import FooterBar from '@/components/FooterBar'
 import Vue from 'vue';
-import { NavBar } from 'vant';
+
+import Vant from 'vant';
+
+Vue.use(Vant);
 import { Toast } from 'vant';
-import { Icon } from 'vant';
-import { Tab, Tabs } from 'vant';
-import { Card } from 'vant';
-import { SubmitBar } from 'vant';
 
-Vue.use(SubmitBar);
-
-Vue.use(Card);
-
-Vue.use(Tab);
-Vue.use(Tabs);
-
-Vue.use(Icon);
-
-Vue.use(NavBar);
 export default{
      data() {
     return {

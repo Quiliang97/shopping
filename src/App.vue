@@ -1,16 +1,38 @@
 <template>
   <div class=".box1">
+  
  <router-view></router-view>
+
+   
+
   </div>
   
   
 </template>
 
 <script>
+import Vue from 'vue';
+import { Form } from 'vant';
+import { Field } from 'vant';
+
+Vue.use(Field);
+Vue.use(Form);
 
 export default {
-
+  data() {
+    return {
+      username: '123',
+      password: '123',
+       
+        
+    };
+  },
+  methods: {
+    onSubmit(values) {
+      console.log('submit', values);
+    },
   
+  },
 };
 
   

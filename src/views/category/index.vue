@@ -2,9 +2,9 @@
     <div class="container">
         <van-search v-model="value" placeholder="请输入搜索关键词" />
        <van-sidebar v-model="activeKey">
-  <van-sidebar-item title="标签名称" />
-  <van-sidebar-item title="标签名称" />
-  <van-sidebar-item title="标签名称" />
+  <van-sidebar-item title="手机" />
+  <van-sidebar-item title="电脑" />
+  <van-sidebar-item title="外设" />
 </van-sidebar>
     
         <FooterBar></FooterBar>
@@ -13,19 +13,22 @@
 <script>
 import FooterBar from '@/components/FooterBar'
 import Vue from 'vue';
-import { Search } from 'vant';
-import { TreeSelect } from 'vant';
-import { Sidebar, SidebarItem } from 'vant';
+import Vant from 'vant';
+// import { Search } from 'vant';
+// import { TreeSelect } from 'vant';
+// import { Sidebar, SidebarItem } from 'vant';
 
-Vue.use(Sidebar);
-Vue.use(SidebarItem);
-import { Card } from 'vant';
+// Vue.use(Sidebar);
+// Vue.use(SidebarItem);
+// import { Card } from 'vant';
 
-Vue.use(Card);
+// Vue.use(Card);
 
-Vue.use(TreeSelect);
+// Vue.use(TreeSelect);
 
-Vue.use(Search);
+
+// Vue.use(Search);
+Vue.use(Vant);
 export default{
     data() {
     return {

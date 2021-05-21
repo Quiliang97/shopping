@@ -1,36 +1,51 @@
 <template>
     <div class="footer-bar">
-        <router-link class="item" :class="{active: currentPath=='/home'}" to="/home">
-            <img src="@/assets/images/首页-选中 (1).png">
-            <span class="txt">首页</span>
-        </router-link>
-        <router-link class="item" :class="{active: currentPath=='/category'}" to="/category">
-            <img src="@/assets/images/分类 (1).png">
-            <span class="txt">分类</span>
-        </router-link>
-         <router-link class="item" :class="{active: currentPath=='/cart'}" to="/cart">
-            <img src="@/assets/images/购物 车 (1).png">
-            <span class="txt">购物车</span>
-        </router-link>
-        <router-link class="item" :class="{active: currentPath=='/my'}" to="/my">
-            <img src="@/assets/images/我 的 (1).png">
-            <span class="txt">我的</span>
-        </router-link>
+               <van-tabbar v-model="active">
+             
+                <van-tabbar-item @click="onClickLeft(active)" name="home" icon="home-o">首页</van-tabbar-item>
+           
+                <van-tabbar-item @click="onClickLeft(active)" name="category" icon="apps-o">分类</van-tabbar-item>
+     
+           
+                <van-tabbar-item @click="onClickLeft(active)" name="cart" icon="cart-o">购物车</van-tabbar-item>
+       
+           
+                <van-tabbar-item @click="onClickLeft(active)" name="my" icon="user-o">我的</van-tabbar-item>
+           
+             
+        </van-tabbar>
     </div>
 </template>
 <script>
+
+import Vue from 'vue';
+import { Tabbar, TabbarItem } from 'vant';
+
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
 export default {
     data(){
         return {
-            currentPath: this.$route.path
+            currentPath: this.$route.path,
+             active: " ",
         }
         // 
     },
     created(){
         // console.log('route',this.$route)
         // console.log('router',this.$router)
-         
+        
+        
 }
+,
+methods: {
+     onClickLeft(x) {
+         console.log(x);
+       this.$router.push({
+             path:"/"+x
+         })
+    },
+},
 }
 </script>
 

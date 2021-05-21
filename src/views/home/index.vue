@@ -73,6 +73,8 @@
 import Vue from 'vue'
 import FooterBar from '@/components/FooterBar'
 import 'vant/lib/index.css';
+
+
 import { Search } from 'vant';
 import { Lazyload } from 'vant';
 import { Swipe, SwipeItem } from 'vant';

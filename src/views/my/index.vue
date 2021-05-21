@@ -1,28 +1,31 @@
 <template>
     <div class="container">
-   <van-nav-bar class="col" title="我的" left-text="返回" left-arrow>
-  <template #right>
-    <van-icon name="setting-o" size="18"/>
-  </template>
-</van-nav-bar>
+            <van-nav-bar
+            title="我的"
+            left-text="返回"
+            right-text="设置"
+            left-arrow
+            @click-left="onClickLeft"
+            @click-right="onClickRight"
+            />
         <div class="MP">
             <div class="img"><img src="@/assets/images/42e8d91a66b86a127fc0fbf180f37cd1.jpeg" alt=""></div>
-            <div class="id"> 秋露渐了</div>
+            <div class="id"> 秋露</div>
         </div>
         <div class="YW">
          <van-grid direction="horizontal" :column-num="3" :border="0">
-  <van-grid-item icon="point-gift-o" text="优惠"   />
+            <van-grid-item icon="point-gift-o" text="优惠"   />
 
-  <van-grid-item icon="balance-o" text="余额" />
- 
-  <van-grid-item icon="points" text="积分" />
-  
-</van-grid>
+            <van-grid-item icon="balance-o" text="余额" />
+            
+            <van-grid-item icon="points" text="积分" />
+            
+        </van-grid>
         </div>
         <div class="YW">
-            <div>
-                <van-icon name="send-gift-o" size="20" />
-                全部订单
+            <div class="BT">
+                <p>全部订单</p>
+              
                 <van-divider />
             </div>
             <van-grid :border="0">
@@ -40,9 +43,9 @@
         </div>
 
          <div class="YW">
-            <div>
-                <van-icon name="gem-o" size="20" />
-                我的服务
+            <div class="BT">
+               
+                <p>全部功能</p>
                 <van-divider />
             </div>
             <van-grid :border="0">
@@ -77,21 +80,12 @@
 <script>
 import FooterBar from '@/components/FooterBar'
 import Vue from 'vue';
-import { NavBar } from 'vant';
+
 import { Toast } from 'vant';
-import { Icon } from 'vant';
-import { Grid, GridItem } from 'vant';
-import { Divider } from 'vant';
+import Vant from 'vant';
 
-Vue.use(Divider);
+Vue.use(Vant);
 
-Vue.use(Grid);
-Vue.use(GridItem);
-
-
-
-Vue.use(NavBar);
-Vue.use(Icon);
 export default{
     data() {
         return {
@@ -102,7 +96,11 @@ export default{
 ,
 methods: {
     onClickLeft() {
-      Toast('返回');
+         this.$router.push({
+             path:"/home"
+         })
+    //    console.log(111);
+     
     },
     onClickRight() {
       Toast('按钮');
@@ -114,9 +112,7 @@ methods: {
 .container{
     width: 100%;
 }
-.container /deep/ .van-nav-bar__content i, .van-nav-bar__title{
-    color: #ff9600;
-}
+
 .container /deep/ .van-icon-arrow-left span{
     color: #ff9600;
 }
@@ -124,14 +120,18 @@ methods: {
     position: relative;
     width: 9.3rem;
     height: 5rem;
-    background:#ff9600;
+
     margin: .6rem auto;
    border-radius: .4rem;
       font-size: .2rem;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-
-
+    background-image: url('//hbimg.huabanimg.com/853e60b7553331a985af1b0bc1778d4c2028e316677ec-mJ8XAr_fw658/format/webp');
+    
 }
+.van-grid-item {
+   color: #ff9600;
+}
+
 .img {
     float: left;
      margin-left: 1rem;
@@ -172,6 +172,16 @@ methods: {
     font-size: .1rem;
     padding: .1rem 0 ;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.YW  .BT {
+    width: 100%;
+    height: 1rem;
+
+}
+.YW  .BT p{
+line-height: .4rem;
+font-size: .4rem;
+margin-left: .4rem;
 }
 .bottom {
     margin-bottom: 10rem;

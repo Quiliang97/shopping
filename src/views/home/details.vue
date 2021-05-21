@@ -34,18 +34,12 @@
 
 <script>
 import Vue from 'vue'
+import Vant from 'vant';
+
+Vue.use(Vant);
 import FooterBar from '@/components/FooterBar';
 import { Search } from 'vant';
-import { PullRefresh } from 'vant';
-import { Card } from 'vant';
-import { Tab, Tabs } from 'vant';
 
-Vue.use(Tab);
-Vue.use(Tabs);
-
-Vue.use(Card);
-
-Vue.use(PullRefresh);
 import { Toast } from 'vant';
 
 
