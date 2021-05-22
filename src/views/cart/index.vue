@@ -8,7 +8,7 @@
 
 <van-tabs v-model="active">
   <van-tab title="最近">
-    <van-card
+    <van-card  @click="onClick()"
   num="2"
   price="2.00"
   desc="描述信息"
@@ -58,6 +58,11 @@ export default{
     onClickRight() {
       Toast('按钮');
     },
+   onClick(){
+     this.$router.push({
+             path:"/goods"
+         })
+   }
   },
   }
 </script>

@@ -125,7 +125,7 @@ methods: {
    border-radius: .4rem;
       font-size: .2rem;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    background-image: url('//hbimg.huabanimg.com/853e60b7553331a985af1b0bc1778d4c2028e316677ec-mJ8XAr_fw658/format/webp');
+    background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.ui.cn%2Fdata%2Ffile%2F1%2F4%2F5%2F2408541.gif&refer=http%3A%2F%2Fimg.ui.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1624189054&t=71e823ae955cc80712388684bef7bd6a');
     
 }
 .van-grid-item {
