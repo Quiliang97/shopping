@@ -2,15 +2,15 @@
     <div class="footer-bar">
                <van-tabbar v-model="active">
              
-                <van-tabbar-item @click="onClickLeft(active)" name="home" icon="home-o">首页</van-tabbar-item>
+                <van-tabbar-item @click="onClickLeft(active)" name="/home" icon="home-o">首页</van-tabbar-item>
            
-                <van-tabbar-item @click="onClickLeft(active)" name="category" icon="apps-o">分类</van-tabbar-item>
+                <van-tabbar-item @click="onClickLeft(active)" name="/category" icon="apps-o">分类</van-tabbar-item>
      
            
-                <van-tabbar-item @click="onClickLeft(active)" name="cart" icon="cart-o">购物车</van-tabbar-item>
+                <van-tabbar-item @click="onClickLeft(active)" name="/cart" icon="cart-o">购物车</van-tabbar-item>
        
            
-                <van-tabbar-item @click="onClickLeft(active)" name="my" icon="user-o">我的</van-tabbar-item>
+                <van-tabbar-item @click="onClickLeft(active)" name="/my" icon="user-o">我的</van-tabbar-item>
            
              
         </van-tabbar>
@@ -18,22 +18,18 @@
 </template>
 <script>
 
-import Vue from 'vue';
-import { Tabbar, TabbarItem } from 'vant';
 
-Vue.use(Tabbar);
-Vue.use(TabbarItem);
 export default {
     data(){
         return {
-            currentPath: this.$route.path,
-             active: " ",
+            // currentPath: this.$route.path,
+             active: this.$router.path,
+             
         }
         // 
     },
     created(){
-        // console.log('route',this.$route)
-        // console.log('router',this.$router)
+       
         
         
 }
@@ -42,7 +38,7 @@ methods: {
      onClickLeft(x) {
          console.log(x);
        this.$router.push({
-             path:"/"+x
+             path:x
          })
     },
 },

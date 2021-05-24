@@ -4,7 +4,7 @@
  <router-view></router-view>
 
    
-
+<!-- <FooterBar></FooterBar> -->
   </div>
   
   
@@ -14,7 +14,7 @@
 import Vue from 'vue';
 import { Form } from 'vant';
 import { Field } from 'vant';
-
+import FooterBar from "@/components/FooterBar";
 Vue.use(Field);
 Vue.use(Form);
 
@@ -33,6 +33,7 @@ export default {
     },
   
   },
+  // components:{FooterBar,}
 };
 
   
