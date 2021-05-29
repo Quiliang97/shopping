@@ -16,7 +16,7 @@ module.exports = {
     // https://vue-loader.vuejs.org/en/options.html
     // vueLoader: {},
     // 生产环境是否生成 sourceMap 文件
-    productionSourceMap: true,
+    productionSourceMap: false,
     // css相关配置
     css: {
         // 是否使用css分离插件 ExtractTextPlugin
@@ -41,10 +41,10 @@ module.exports = {
     devServer: {
         open: process.platform === 'darwin',
         disableHostCheck: true,
-        host: 'www.test.com', //如果是真机测试，就使用这个IP
-        port: 1234,
+        host: '0.0.0.0', //如果是真机测试，就使用这个IP
+        port: 8080,
         https: false,
-        hotOnly: false,
+        hotOnly: true,
         before: app => {}
     },
     // 第三方插件配置

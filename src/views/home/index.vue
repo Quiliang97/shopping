@@ -4,12 +4,12 @@
     <van-search
       v-model="value"
       shape="round"
-      background="#6bd5f5"
+      background="#fff"
       placeholder="请输入搜索关键词"
     />
 
     <!-- 顶部导航栏 -->
-    <router-link to="/details">
+    <!-- <router-link to="/details">
       <van-row type="flex" justify="space-around">
         <van-col span="4">三星</van-col>
         <van-col span="4">苹果</van-col>
@@ -17,7 +17,7 @@
         <van-col span="4">小米</van-col>
         <van-col span="4">魅族</van-col>
       </van-row>
-    </router-link>
+    </router-link> -->
 
     <div class="swipe">
       <!-- 轮播图 -->
@@ -32,47 +32,47 @@
     <div class="box2">
       <van-row class="box1" type="flex" justify="space-around">
         <van-col span="4"
-          ><img
+          ><router-link to="/details"><img
             src="https://img.alicdn.com/tfs/TB1AgS.D1T2gK0jSZFvXXXnFXXa-400-400.png"
             alt=""
-        /></van-col>
+        /></router-link></van-col>
         <van-col span="4"
-          ><img
+          ><router-link to="/details"><img
             src="https://img.alicdn.com/tfs/TB1.Y9mMEY1gK0jSZFMXXaWcVXa-800-800.jpg"
             alt=""
-        /></van-col>
+        /></router-link></van-col>
         <van-col span="4"
-          ><img
+          ><router-link to="/details"><img
             src="https://img.alicdn.com/tfs/TB16TYrG4z1gK0jSZSgXXavwpXa-1200-1200.png"
             alt=""
-        /></van-col>
+        /></router-link></van-col>
         <van-col span="4"
-          ><img
+          ><router-link to="/details"><img
             src="https://gw.alicdn.com/tfs/TB1a0jqXwFY.1VjSZFqXXadbXXa-400-400.jpg"
             alt=""
-        /></van-col>
+        /></router-link></van-col>
       </van-row>
       <van-row class="box1" type="flex" justify="space-around">
         <van-col span="4"
-          ><img
+          ><router-link to="/details"><img
             src="https://gw.alicdn.com/tfs/TB1LFOZcUKF3KVjSZFEXXXExFXa-400-400.jpg"
             alt=""
-        /></van-col>
+        /></router-link></van-col>
         <van-col span="4"
-          ><img
+          ><router-link to="/details"><img
             src="https://gw.alicdn.com/imgextra/i3/O1CN01ny1OeB1XgydVPVUHU_!!6000000002954-0-tps-800-800.jpg"
             alt=""
-        /></van-col>
+        /></router-link></van-col>
         <van-col span="4"
-          ><img
+          ><router-link to="/details"><img
             src="https://gw.alicdn.com/tfs/TB1pT1YcUCF3KVjSZJnXXbnHFXa-400-400.jpg"
             alt=""
-        /></van-col>
+        /></router-link></van-col>
         <van-col span="4"
-          ><img
+          ><router-link to="/details"><img
             src="https://img.alicdn.com/tps/TB2J_rQeMMPMeJjy1XdXXasrXXa_!!2019781857-0-daren.jpg"
             alt=""
-        /></van-col>
+        /></router-link></van-col>
       </van-row>
     </div>
 
@@ -104,7 +104,7 @@
     </div>
     <!-- 新品上市 -->
     <div class="xinpin">
-      <p>新品上市！</p>
+      <p class="title">新品上市！</p>
       <van-row type="flex" justify="space-around">
         <van-col span="11">
           <img
@@ -113,7 +113,6 @@
           />
           <h6>OPPO K9 65W超级闪充 90Hz</h6>
           <div class="jiage">
-            <van-icon name="star-o" size="18" color="red" />
             <h5>￥4599</h5>
             <span>46人付款</span>
           </div>
@@ -126,7 +125,6 @@
           />
           <h6>小米11 Ultra 至尊 5G</h6>
           <div class="jiage">
-            <van-icon name="star-o" size="18" color="red" />
             <h5>￥6599</h5>
             <span>96人付款</span>
           </div>
@@ -139,7 +137,6 @@
           />
           <h6>vivo X60 Pro 华彩</h6>
           <div class="jiage">
-            <van-icon name="star-o" size="18" color="red" />
             <h5>￥4498</h5>
             <span>78人付款</span>
           </div>
@@ -151,7 +148,6 @@
           />
           <h6>华为 HUAWEI Mate 40 Pro</h6>
           <div class="jiage">
-            <van-icon name="star-o" size="18" color="red" />
             <h5>￥8288</h5>
             <span>963人付款</span>
           </div>
@@ -163,7 +159,6 @@
           />
           <h6>OPPO K9 65W超级闪充 90Hz</h6>
           <div class="jiage">
-            <van-icon name="star-o" size="18" color="red" />
             <h5>￥4599</h5>
             <span>46人付款</span>
           </div>
@@ -176,7 +171,6 @@
           />
           <h6>小米11 Ultra 至尊 5G</h6>
           <div class="jiage">
-            <van-icon name="star-o" size="18" color="red" />
             <h5>￥6599</h5>
             <span>96人付款</span>
           </div>
@@ -189,7 +183,6 @@
           />
           <h6>vivo X60 Pro 华彩</h6>
           <div class="jiage">
-            <van-icon name="star-o" size="18" color="red" />
             <h5>￥4498</h5>
             <span>78人付款</span>
           </div>
@@ -201,7 +194,6 @@
           />
           <h6>华为 HUAWEI Mate 40 Pro</h6>
           <div class="jiage">
-            <van-icon name="star-o" size="18" color="red" />
             <h5>￥8288</h5>
             <span>963人付款</span>
           </div>
@@ -269,10 +261,10 @@ export default {
 <style scoped>
 .container {
   width: 100%;
+  padding-bottom: 60px;
 }
 /* 顶部导航 */
 .container /deep/ .van-row {
-  height: 1rem;
   background: #6bd5f5;
   color: #fff;
   font-size: 0.5rem;
@@ -317,7 +309,7 @@ export default {
   border-radius: 5rem;
   margin: auto 0;
   line-height: 1.4rem;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
 }
 .container .box2 /deep/ .van-row .van-col img {
   width: 1.4rem;
@@ -364,15 +356,14 @@ export default {
 .xinpin {
   margin-top: 0.3rem;
   width: 100%;
-  height: 1.2rem;
-  border-bottom: 1px solid rgb(233, 229, 229);
-  margin-bottom: 27rem;
-  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgb(233, 229, 229);
+  /* box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2); */
 }
-.xinpin p {
+.xinpin .title {
   line-height: 1.2rem;
   font-size: 0.4rem;
-  margin-left: 0.3rem;
+  padding-left: 0.3rem;
+  border-bottom: 1px solid rgb(233, 229, 229);
 }
 .container .box2 /deep/ .van-row .van-col img {
   width: 1.4rem;
@@ -386,27 +377,26 @@ export default {
 .xinpin .van-col {
   height: 6rem;
   margin-top: 0.3rem;
-  border-radius: 0.3rem;
+  border-radius: 3px;
   color: #000;
   padding: 0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border:1px solid #eee;
 }
 .xinpin .van-col img {
   width: 100%;
   border-radius: 0.3rem;
 }
 .xinpin .van-col h6 {
-  margin: 0;
+  margin: 0 .3rem;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;text-align:left;font-weight: normal;
 }
 .xinpin .van-col h5 {
   float: left;
   font-size: 0.4rem;
-  width: 2rem;
-  margin: 0 0.1rem;
+  margin: 0 0.3rem;
   color: red;
 }
 .xinpin .van-col span {
-  font-size: 0.2rem;
+  font-size: 0.3rem;
   color: rgb(175, 171, 171);
 }
 </style>

@@ -1,65 +1,32 @@
 <template>
   <div class="container">
     <!-- 顶部标签 -->
-    <van-nav-bar title="购物车" left-text="返回" left-arrow>
+    <van-nav-bar title="购物车">
       <template #right> </template>
     </van-nav-bar>
     <div class="shangpin">
-      <div class="box1">
+      <div class="box1" v-for="(item,index) in list" :key="index">
         <van-checkbox v-model="checked">
           <van-card
-            num="1"
-            tag="热卖"
-            price="4299"
-            desc="描述信息"
-            title="OPPO K9 65W超级闪充 90Hz"
-            thumb="//m.360buyimg.com/babel/s584x584_jfs/t1/159316/17/20577/82915/607e98d3E8c95f229/a8985a8f9dc05290.jpg!q70.dpg"
-            origin-price="4599"
-          />
+            :num="item.num"
+            :tag="item.tag"
+            :price="item.price"
+            :desc="item.desc"
+            :title="item.title"
+            :thumb="item.thumb"
+            :origin-price="item.originPrice"
+          >
+          <template #num>
+            <van-stepper v-model="item.num" />
+          </template>
+          </van-card>
         </van-checkbox>
       </div>
-      <div class="box1">
-        <van-checkbox v-model="checked">
-          <van-card
-            num="1"
-            tag="特价"
-            price="6288"
-            desc="描述信息"
-            title="小米11 Ultra 至尊 5G "
-            thumb="//m.360buyimg.com/babel/s584x584_jfs/t1/160453/12/19378/100951/6077edbcE10e6e6d1/2066877cbb6f964a.jpg!q70.dpg"
-            origin-price="6588"
-          />
-        </van-checkbox>
-      </div>
-      <div class="box1">
-        <van-checkbox v-model="checked">
-          <van-card
-            num="1"
-            tag="优惠"
-            price="4398"
-            desc="描述信息"
-            title="vivo X60 Pro  华彩"
-            thumb="//m.360buyimg.com/babel/s584x584_jfs/t1/174413/30/7319/65951/608bef7dE88319d3f/478a7ed5be4ad76c.jpg!q70.dpg"
-            origin-price="4498"
-          />
-        </van-checkbox>
-      </div>
-      <div class="box1">
-        <van-checkbox v-model="checked">
-          <van-card
-            num="1"
-            tag="新品"
-            price="8188"
-            desc="描述信息"
-            title="华为 HUAWEI Mate 40 Pro "
-            thumb="//m.360buyimg.com/babel/s584x584_jfs/t1/162900/27/11867/71424/6049ed4eEdd49f572/1d353a7b5f8d67b8.jpg!q70.dpg"
-            origin-price="8288"
-          />
-        </van-checkbox>
-      </div>
+      
     </div>
+    <LoadingMore :status.sync="loadingType"></LoadingMore>
     <van-submit-bar
-      :price="2367350"
+      :price="totalPrice"
       button-text="提交订单"
       @submit="onSubmit"
     />
@@ -68,19 +35,59 @@
 </template>
 <script>
 import FooterBar from "@/components/FooterBar";
+import LoadingMore from "@/components/LoadingMore";
 // 
 import { Toast } from "vant";
 
 export default {
+  components: { FooterBar,LoadingMore },
   data() {
     return {
       active: 2,
       checked: true,
+      loadingType:'loading',
+      list:[]
     };
   },
-  components: { FooterBar },
-
+  computed:{
+    totalPrice(){
+      var total = 0;
+      this.list.map(a=>{
+        total += a.price * a.num;
+      })
+      total = total*100
+      return total;
+    }
+  },
+  created(){
+    this.getList();
+  },
   methods: {
+    getList(){
+      this.loadingType = 'loading'
+      setTimeout(()=>{
+        this.list = [{
+            num:1,
+            tag:"热卖",
+            price:1000,
+            desc:"描述信息",
+            title:"OPPO K9 65W超级闪充 90Hz",
+            thumb:"//m.360buyimg.com/babel/s584x584_jfs/t1/159316/17/20577/82915/607e98d3E8c95f229/a8985a8f9dc05290.jpg!q70.dpg",
+            originPrice:"4599"
+          },
+          {
+            num:1,
+            tag:"热卖",
+            price:4299,
+            desc:"描述信息",
+            title:"OPPO K9 65W超级闪充 90Hz",
+            thumb:"//m.360buyimg.com/babel/s584x584_jfs/t1/159316/17/20577/82915/607e98d3E8c95f229/a8985a8f9dc05290.jpg!q70.dpg",
+            originPrice:"4599"
+          }
+        ]
+        this.loadingType = 'nomore'
+      },5500)
+    },
     onClickLeft() {
       Toast("返回");
     },
@@ -92,6 +99,9 @@ export default {
         path: "/goods",
       });
     },
+    onSubmit(){
+
+    }
   },
 };
 </script>

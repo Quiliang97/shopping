@@ -1,12 +1,5 @@
 <template>
   <div class="container">
-    <van-nav-bar
-      title="我的"
-      left-text="返回"
-      left-arrow
-      @click-left="onClickLeft"
-      @click-right="onClickRight"
-    />
     <div class="MP">
       <div class="img">
         <img
@@ -40,7 +33,6 @@
     <div class="YW">
       <div class="BT">
         <p>全部订单</p>
-        <van-divider />
       </div>
       <van-grid :border="0">
         <van-grid-item
@@ -199,16 +191,16 @@ export default {
   border-radius: 0.2rem;
   font-size: 0.1rem;
   padding: 0.1rem 0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border:1px solid #eee;
 }
 .YW .BT {
   width: 100%;
-  height: 1rem;
 }
 .YW .BT p {
   line-height: 0.4rem;
   font-size: 0.4rem;
-  margin-left: 0.4rem;
+  padding: .3rem .4rem;
+  border-bottom:1px solid #eee;
 }
 .container:last-child {
   margin-bottom: 2rem;

@@ -1,12 +1,7 @@
 <template>
   <div class="container">
     <!-- 顶部搜索 -->
-    <van-search
-      v-model="value"
-      shape="round"
-      background="#6bd5f5"
-      placeholder="请输入搜索关键词"
-    />
+    <Search ref="search" @search="onSearch"></Search>
     <!-- 顶部导航 -->
     <van-tabs v-model="active" animated>
       <van-tab v-for="X in index" :key="X" :title="X">
@@ -25,15 +20,13 @@
       </van-tab>
     </van-tabs>
 
-    <FooterBar></FooterBar>
   </div>
 </template>
 
 <script>
 
-import FooterBar from "@/components/FooterBar";
 
-
+import Search from '@/components/Search'
 import { Toast } from "vant";
 
 
@@ -47,8 +40,14 @@ export default {
       active: 2,
     };
   },
-  components: { FooterBar },
-
+  components: { Search },
+  created(){
+    
+  },
+  mounted(){
+    this.$refs.search.childFunction();
+    console.log(this.$refs.search.num);
+  },
   methods: {
     onRefresh() {
       setTimeout(() => {
@@ -57,6 +56,10 @@ export default {
         this.count++;
       }, 1000);
     },
+
+    onSearch(data,arg1,arg2){
+      console.log('监听到子组件方法search',data,arg1)
+    }
   },
 };
 </script>

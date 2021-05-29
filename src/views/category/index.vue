@@ -4,7 +4,7 @@
     <van-search v-model="value" placeholder="请输入搜索关键词" />
     <!-- 侧边搜索 -->
     <van-tree-select
-      height="100vw"
+      height="calc( 100vh - 104px )"
       :items="items"
       :main-active-index.sync="active"
     >

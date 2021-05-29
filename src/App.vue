@@ -49,7 +49,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
+*{
+  margin:0;padding:0;box-sizing: border-box;
+}
 .box1{
   width: 100%;
   height: 100%;

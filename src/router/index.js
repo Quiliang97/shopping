@@ -10,7 +10,11 @@ Vue.use(VueRouter);
 
 // 2. 定义路由
 const routes = [
-
+    {
+        path: '',
+        component: () =>
+            import ('@/views/home')
+    },
     {
         path: '/home',
         component: () =>
